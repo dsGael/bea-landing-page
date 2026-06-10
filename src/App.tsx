@@ -6,11 +6,11 @@ import Footer from './components/Footer'
 // Importando tus páginas
 import Inicio from './pages/Inicio'
 import Catalogo from './pages/Catalogo'
-import AboutUs from './pages/AboutUs'
 import CasosExito from './pages/CasosExito'
 import Contacto from './pages/Contacto'
 
 import './App.css'
+import BtnWhatsapp from './components/BtnWhatsapp';
 
 function App() {
   return (
@@ -19,10 +19,10 @@ function App() {
         <Navbar />
 
         <main className="flex-1 ">
+          <BtnWhatsapp/>
           <Routes>
             <Route path="/" element={<Inicio />} />
             <Route path="/catalogo" element={<Catalogo />} />
-            <Route path="/nosotros" element={<AboutUs />} />
             <Route path="/casosExito" element={<CasosExito />} />
             <Route path="/contacto" element={<Contacto />} />
           </Routes>

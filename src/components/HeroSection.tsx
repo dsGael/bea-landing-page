@@ -26,11 +26,11 @@ export default function Hero() {
       <div className="relative z-20 flex flex-col items-center justify-center h-full px-4 text-center text-white">
         
         <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg max-w-4xl">
-          Soluciones Integrales en Automatización
+          Tecnología que conecta tu operación
         </h1>
         
         <p className="text-lg md:text-2xl mb-8 max-w-2xl drop-shadow-md text-gray-200">
-          Tecnología y control para la industria actual.
+          +20 años de experiencia en transporte y movilidad, optimizando operaciones con soluciones inteligentes.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4">

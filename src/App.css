@@ -1,13 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=PT+Sans:wght@400;700&display=swap");
 @import "tailwindcss";
 
 @theme {
-  /* Aquí defines los colores de tu proyecto */
+  --font-sans: "PT Sans", sans-serif;
+  --font-display: "Inter", sans-serif;
   --color-primary: #fe630c; /* naranja  */
   --color-primary-hover: #DF5301; /* naranja oscuro */
   --color-secondary: #005cb9; /*  azul  */
   --color-secondary-hover: #00478F; /* azul oscuro */
-  --color-fondo-oscuro: #D6D6D6
+  --color-fondo-oscuro: #D6D6D6;
   --color-texto: #333333;
   --color-cafe: #A89379;
   --color-fondo-claro: #f3f3f3;
+}
+
+@layer base {
+  html,
+  body {
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .font-display {
+    font-family: var(--font-display);
+  }
 }

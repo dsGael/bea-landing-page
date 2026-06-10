@@ -1,11 +1,20 @@
 import Boton from '../components/Boton';
-import logo from '../assets/PNG INTEGRA_LOGO NEGRO.png';
+import logo from '../assets/PNG INTEGRA_LOGO MULTI.png';
 
 const inputClassName = "bg-gray-100/50 p-4 w-full rounded-md focus:outline-none focus:ring-1 focus:ring-gray-300";
 
+const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
+  e.preventDefault();
+  
+  const formData= new FormData(e.currentTarget);
+  const data= Object.fromEntries(formData);
+
+  console.log(data)
+}
+
 const Contacto = () => {
   return (
-<section className=" mx-auto grid max-w-6xl grid-cols-1 gap-10 px-4 pt-22 pb-10 sm:px-6 sm:pt-52 sm:pb-16 lg:grid-cols-2 lg:gap-12 lg:px-8 font-sans">      
+    <section className=" mx-auto grid max-w-6xl grid-cols-1 gap-10 px-4 pt-22 pb-10 sm:px-6 sm:pt-52 sm:pb-16 lg:grid-cols-2 lg:gap-12 lg:px-8 font-sans">      
       <div className="space-y-5 sm:space-y-6 text-center lg:text-left">
         
         <img 
@@ -14,7 +23,7 @@ const Contacto = () => {
           className="object-contain h-auto w-full max-w-sm mx-auto lg:mx-0 -my-20" 
         />
         
-        <p className="text-gray-400 font-bold uppercase tracking-widest text-xs sm:text-sm">Contacto</p>
+        <p className="text-gray-600 font-bold uppercase tracking-widest text-xs sm:text-sm">Contacto</p>
         <h2 className="text-3xl font-bold leading-tight text-secondary sm:text-4xl lg:text-5xl">
           Estamos listos para <br className="hidden sm:block" /> atenderle.
         </h2>
@@ -23,17 +32,18 @@ const Contacto = () => {
         </p>
       </div>
 
-      <form className="bg-white space-y-4 rounded-2xl bg-fondo-oscuro p-4 shadow-xl sm:p-6 lg:p-8">
+      <form onSubmit={handleSubmit} className="bg-white space-y-4 rounded-2xl p-4 shadow-xl sm:p-6 lg:p-8 ">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <input type="text" placeholder="Nombre" className={inputClassName} />
-          <input type="text" placeholder="Apellido" className={inputClassName} />
+          <input type="text" name="nombre" placeholder="Nombre completo" className={inputClassName} />
+          <input type="text" name="empresa" placeholder="Empresa" className={inputClassName} />
         </div>
 
-        <input type="email" placeholder="Dirección de correo electrónico" className={inputClassName} />
+        <input type="email" name="email" placeholder="Dirección de correo electrónico" className={inputClassName} />
 
-        <input type="tel" placeholder="Teléfono (con LADA)" className={inputClassName} />
+        <input type="tel" name="telefono" placeholder="Teléfono (con LADA)" className={inputClassName} />
 
         <textarea
+          name="mensaje"
           placeholder="Mensaje"
           rows={6}
           className={`${inputClassName} resize-none`}
